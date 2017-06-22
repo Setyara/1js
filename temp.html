@@ -26,6 +26,7 @@ function getTimeRange(inputString) {
     if (arr !== null) {
         let result = [];
         if (arr[1] < 24 && arr[3] < 24 && arr[2] < 59 && arr[4] < 59) {
+             
              if (parseInt(arr[4], 10) > 0) {
                 arr[3] = (arr[3] * 1) + 1;
             }
