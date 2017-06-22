@@ -26,13 +26,17 @@ function getTimeRange(inputString) {
     if (arr !== null) {
         let result = [];
         if (arr[1] < 24 && arr[3] < 24 && arr[2] < 59 && arr[4] < 59) {
-            for (i = (arr[1] * 1); i < (arr[3] * 1 + 1); i++) {
+             if (parseInt(arr[4], 10) > 0) {
+                arr[3] = (arr[3] * 1) + 1;
+            }
+            for (i = (arr[1] * 1); i < (arr[3] * 1); i++) {
                 result.push(i + ':00' + ' - ' + (i + 1) + ':00');
             }
             return result;
         }
+        
     }
-    return null;
+    return null; 
     
 }
 alert (getTimeRange(input));
